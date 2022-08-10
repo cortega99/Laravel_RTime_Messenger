@@ -1,12 +1,10 @@
-require('./bootstrap');
+require('./bootstrap')
 
-// Require Vue
-window.Vue = require('vue').default;
+import { createApp } from 'vue'
+import ChatApp from './components/ChatApp'
 
-// Register Vue Components
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+const app = createApp({})
 
-// Initialize Vue
-const app = new Vue({
-    el: '#app',
-});
+app.component('chat-app', ChatApp)
+
+app.mount('#app')
