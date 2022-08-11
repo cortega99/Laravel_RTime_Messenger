@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Real time messenger :)') }}</div>
 
-                <div class="card-body" id="app">
+                <div class="card-body-in" id="app">
                     <chat-app :user="{{ auth()->user() }}"></chat-app>
                 </div>
             </div>

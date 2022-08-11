@@ -116,6 +116,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 
 h1, .h1 {
   font-size: calc(1.35rem + 1.2vw);
+  position: absolute;
 }
 @media (min-width: 1200px) {
   h1, .h1 {
@@ -182,6 +183,18 @@ ul {
   padding-left: 2rem;
 }
 
+ul.side-bar {
+  max-height: 600px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow: scroll;
+  list-style-type: none;
+  border-left: 1px solid rgba(227, 228, 228, 0.552);
+  border-width: 3px;
+  flex: 1;
+  padding: 0px;
+}
+
 ol,
 ul,
 dl {
@@ -194,6 +207,107 @@ ul ul,
 ol ul,
 ul ol {
   margin-bottom: 0;
+}
+
+li.side-bar-selected-true {
+  display: flex;
+  padding: 2px;
+  border-bottom: 1px solid rgba(227, 228, 228, 0.552);
+  height: 80px;
+  position: relative;
+  cursor: pointer;
+  background-color: rgba(222, 210, 210, 0.449);
+}
+
+li.side-bar-selected-false {
+  display: flex;
+  padding: 2px;
+  border-bottom: 1px solid rgba(227, 228, 228, 0.552);
+  height: 80px;
+  position: relative;
+  cursor: pointer;
+}
+
+h1.contact-name {
+  position: absolute;
+  font-size: 20px;
+  padding: 10px;
+  border-bottom: 1px dashed lightgray;
+  width: 840px;
+}
+
+.avatar img {
+  width: 35px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.feed-container {
+  position: absolute;
+  max-width: 800px;
+  padding-top: 150px;
+}
+
+.feed-messenger {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow-y: scroll;
+  max-height: 400px;
+  width: 800px;
+  list-style-type: none;
+  background: rgba(235, 232, 232, 0.386);
+  padding-left: 0px;
+}
+
+li.message-sent {
+  margin: 10px;
+  text-align: right;
+}
+
+.text-sent {
+  display: inline-block;
+  padding: 12px;
+  border-radius: 2px;
+  max-width: 200px;
+  background: #c9e1e8;
+}
+
+li.message-received {
+  margin: 10px;
+  width: 100%;
+  text-align: left;
+}
+
+.text-received {
+  display: inline-block;
+  padding: 12px;
+  border-radius: 2px;
+  max-width: 200px;
+  background: #bab9b9ca;
+}
+
+.avatar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.contact p {
+  margin: 0;
+}
+
+.contact p.name {
+  font-weight: bold;
+}
+
+.contact {
+  flex: 8;
+  font-size: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
 }
 
 dt {
@@ -352,6 +466,12 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  width: 800px;
+  margin: 10px;
+  resize: none;
+  border-radius: 3px;
+  border: 1px solid rgba(192, 195, 195, 0.668);
+  padding-left: 6px;
 }
 
 button,
@@ -394,6 +514,7 @@ button:not(:disabled),
 
 textarea {
   resize: vertical;
+  resize: none;
 }
 
 fieldset {
@@ -4229,6 +4350,11 @@ textarea.form-control-lg {
 .card-body {
   flex: 1 1 auto;
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+  color: var(--bs-card-color);
+}
+
+.card-body-in {
+  flex: 1 1 auto;
   color: var(--bs-card-color);
 }
 
