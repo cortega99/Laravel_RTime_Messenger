@@ -25,3 +25,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/contacts', [App\Http\Controllers\ContactsController::class, 'get']);
 
 Route::get('/conversation/{id}', [App\Http\Controllers\ContactsController::class, 'getMessagesFor']);
+
+Route::post('/conversation/send', [App\Http\Controllers\ContactsController::class, 'send']);

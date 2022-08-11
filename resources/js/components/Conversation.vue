@@ -10,6 +10,7 @@
     import MessageComposer from './MessageComposer';
     
     export default {
+        emits: ['new'],
         props: {
             contact: {
                 type: Object,
@@ -22,7 +23,16 @@
         },
         methods: {
             sendMessage(text) {
-                console.log(text);
+                if (!this.contact) {
+                    return;
+                }
+
+                axios.post('/conversation/send', {
+                    contact_id: this.contact.id,
+                    text: text
+                }).then((response) => {
+                    this.$emit('new', response.data);
+                })
             }
         },
         components: {
