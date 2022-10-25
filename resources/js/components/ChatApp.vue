@@ -26,7 +26,6 @@
         mounted() {
             Echo.private(`messages.${this.user.id}`)
                 .listen('.message.sent', (e) => {
-                    console.log('Siiii lo escucha');
                     this.handleIncoming(e.message);
                 })
 
@@ -45,7 +44,6 @@
                 this.messages.push(message);
             },
             handleIncoming(message) {
-                console.log('LLEGANDO A HANDLE INCOMING');
                 if(this.selectedContact && (message.from === this.selectedContact.id)) {
                     this.saveNewMessage(message);
                     

@@ -31,14 +31,12 @@
         watch: {
             contact: {
                 handler(contact) {
-                    console.log('debería hacer scroll contacto');
                     this.scrollToBottom();
                 },
                 deep: true
             },
             messages: {
                 handler(message) {
-                    console.log('debería hacer scroll mensaje');
                     this.scrollToBottom();
                 },
                 deep: true
